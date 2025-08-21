@@ -1,5 +1,6 @@
 
-const { Client, Databases, Models, Query, Messaging, ID } = require('node-appwrite');
+import { Client, Databases, Messaging, ID, Query } from "node-appwrite";
+import type { Models } from "node-appwrite";
 
 // Define interfaces
 interface WebhookPayload {
@@ -132,8 +133,8 @@ module.exports = async ({ req, res, log, error }: FunctionContext) => {
 
 async function handleNewPost(
   postDocument: PostDocument,
-  databases: Databases,
-  messaging: Messaging,
+  databases: InstanceType<typeof Databases>,
+  messaging: InstanceType<typeof Messaging>,
   log: (msg: string) => void,
   error: (msg: string) => void,
   res: { json: (data: any, status?: number) => void }
@@ -194,8 +195,8 @@ async function handleNewPost(
 
 async function handleNewComment(
   commentDocument: CommentDocument,
-  databases: Databases,
-  messaging: Messaging,
+  databases: InstanceType<typeof Databases>,
+  messaging: InstanceType<typeof Messaging>,
   log: (msg: string) => void,
   error: (msg: string) => void,
   res: { json: (data: any, status?: number) => void }
@@ -257,7 +258,7 @@ async function handleNewComment(
 
 async function handleDirectCall(
   payload: WebhookPayload,
-  messaging: Messaging,
+  messaging: InstanceType<typeof Messaging>,
   log: (msg: string) => void,
   error: (msg: string) => void,
   res: { json: (data: any, status?: number) => void }
@@ -273,7 +274,7 @@ async function handleDirectCall(
 
 async function sendAppwriteNotifications(
   notificationData: NotificationData,
-  messaging: Messaging,
+  messaging: InstanceType<typeof Messaging>,
   log: (msg: string) => void,
   error: (msg: string) => void,
   res: { json: (data: any, status?: number) => void }
