@@ -306,13 +306,13 @@ async function sendAppwriteNotifications(
       [], // topics
       userIds, // users
       [], // targets (empty since we're using users)
-      null, // data
+      messageData, // data
       null, // action
       null, // icon
       null, // sound
       null, // color
       null, // tag
-      "1", // badge count
+      null, // badge count
       null // draft
     );
 
