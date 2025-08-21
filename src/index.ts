@@ -306,7 +306,7 @@ async function sendAppwriteNotifications(
       [], // topics
       userIds, // users
       [], // targets (empty since we're using users)
-      JSON.stringify(messageData), // data
+      messageData, // data
       null, // action
       null, // icon
       null, // sound
