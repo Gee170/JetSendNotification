@@ -312,7 +312,7 @@ async function sendAppwriteNotifications(
       null, // sound
       null, // color
       null, // tag
-      1, // badge count
+      "1", // badge count
       null // draft
     );
 
