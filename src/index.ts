@@ -306,6 +306,7 @@ async function sendAppwriteNotifications(
       [], // topics
       userIds, // users
       [], // targets (empty since we're using users)
+      messageData, // data
     );
 
     log(`Successfully created Appwrite push notification: ${JSON.stringify(pushNotification)}`);
